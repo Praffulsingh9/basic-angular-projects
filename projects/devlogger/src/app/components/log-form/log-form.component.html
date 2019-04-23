@@ -4,6 +4,6 @@
       <input type="text" name="text" [(ngModel)]="text" class="form-control" placeholder="Add a log...">
     </div>
     <input type="submit" value="Add Log" class="btn btn-light" [disabled]="!this.text">
-    <input type="button" value="clear" class="btn btn-warning" [hidden]="!this.text">
+    <input (click)="clearState()" type="button" value="clear" class="btn btn-warning" [hidden]="!this.text">
   </form>
 </div>
