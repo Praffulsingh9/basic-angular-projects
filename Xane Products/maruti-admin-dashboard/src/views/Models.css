@@ -1,0 +1,9 @@
+.model-background {
+  background-color: #1a1e34;
+  width: 50vw;
+  align-self: center;
+}
+
+.modal-text {
+  color: #1d8cf8;
+}
