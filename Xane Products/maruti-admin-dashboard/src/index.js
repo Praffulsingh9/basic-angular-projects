@@ -7,6 +7,7 @@ import AuthLayout from "./layouts/Auth/Auth";
 import AdminLayout from "./layouts/Admin/Admin";
 import { Provider } from "react-redux";
 import { configureStore } from "./store/store";
+import { App } from "./containers/App/App";
 
 import "./assets/css/nucleo-icons.css";
 import "react-notification-alert/dist/animate.css";
@@ -19,11 +20,7 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter history={hist}>
-      <Switch>
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Redirect from="/" to="/admin/dashboard" />
-      </Switch>
+      <App hist={hist}/>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

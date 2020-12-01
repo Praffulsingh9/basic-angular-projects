@@ -1,8 +1,11 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { dummy } from "./reducers/dummy";
+import { analyticsReducer } from "./reducers/analytics";
+
 const rootReducer = combineReducers({
   dummy,
+  analytics:analyticsReducer
 });
 
 const composeEnhancers =

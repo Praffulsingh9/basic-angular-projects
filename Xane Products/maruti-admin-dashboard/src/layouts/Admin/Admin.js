@@ -195,7 +195,7 @@ class Admin extends React.Component {
           activeColor={this.state.activeColor}
           logo={{
             outterLink: "https://www.creative-tim.com/",
-            text: "Creative Tim",
+            text: "Analytics",
             imgSrc: logo
           }}
           closeSidebar={this.closeSidebar}
@@ -216,11 +216,11 @@ class Admin extends React.Component {
             {this.getRoutes(routes)}
             <Redirect from="*" to="/admin/dashboard" />
           </Switch>
-          {// we don't want the Footer to be rendered on full screen maps page
+          {/* {// we don't want the Footer to be rendered on full screen maps page
           this.props.location.pathname.indexOf("full-screen-map") !==
           -1 ? null : (
             <Footer fluid />
-          )}
+          )} */}
         </div>
       </div>
     );

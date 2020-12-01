@@ -45,6 +45,8 @@ class Login extends React.Component {
     loginPasswordState: "",
   };
 
+  
+
   verifyEmail = (value) => {
     var emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (emailRex.test(value)) {
@@ -174,19 +176,19 @@ class Login extends React.Component {
   };
 
   loginClick = () => {
-    if (this.state.loginFullNameState === "") {
-      this.setState({ loginFullNameState: "has-danger" });
-    }
+    console.log(this.props);
     if (this.state.loginEmailState === "") {
       this.setState({ loginEmailState: "has-danger" });
     }
     if (this.state.loginPasswordState === "") {
       this.setState({ loginPasswordState: "has-danger" });
     }
+    this.props.history.push("/admin/dashboard");
   };
 
   componentDidMount() {
     document.body.classList.toggle("login-page");
+    this.props.history.push("/admin/dashboard");
   }
   componentWillUnmount() {
     document.body.classList.toggle("login-page");
@@ -201,7 +203,6 @@ class Login extends React.Component {
     // taking all the states
     let {
       // login form
-      loginFullNameState,
       loginEmailState,
       loginPasswordState,
     } = this.state;
@@ -216,19 +217,6 @@ class Login extends React.Component {
                     <CardTitle tag="h4">Login Form</CardTitle>
                   </CardHeader>
                   <CardBody>
-                    <FormGroup className={`has-label ${loginFullNameState}`}>
-                      <label>Full Name *</label>
-                      <Input
-                        name="fullname"
-                        type="text"
-                        onChange={(e) =>
-                          this.change(e, "loginFullName", "length", 1)
-                        }
-                      />
-                      {this.state.loginFullNameState === "has-danger" ? (
-                        <label className="error">This field is required.</label>
-                      ) : null}
-                    </FormGroup>
                     <FormGroup className={`has-label ${loginEmailState}`}>
                       <label>Email Address *</label>
                       <Input

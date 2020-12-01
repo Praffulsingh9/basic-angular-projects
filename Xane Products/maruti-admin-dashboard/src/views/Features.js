@@ -1335,6 +1335,13 @@ class Features extends React.Component {
     );
   };
 
+  filterCaseInsensitive = (filter, row) => {
+    const id = filter.pivotId || filter.id;
+    return row[id] !== undefined
+      ? String(row[id].toLowerCase()).startsWith(filter.value.toLowerCase())
+      : true;
+  };
+
   render() {
     let { isOpen } = this.state;
     return (
@@ -1436,6 +1443,9 @@ class Features extends React.Component {
                   <ReactTable
                     data={this.state.data}
                     filterable
+                    defaultFilterMethod={(filter, row) =>
+                      this.filterCaseInsensitive(filter, row)
+                    }
                     resizable={false}
                     columns={[
                       {

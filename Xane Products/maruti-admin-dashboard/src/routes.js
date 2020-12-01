@@ -174,35 +174,35 @@ const routes = [
     layout: "/admin",
     icon: "tim-icons icon-chart-pie-36",
   },
-  {
-    path: "/models",
-    name: "Models",
-    component: LazyModels,
-    layout: "/admin",
-    icon: "tim-icons icon-bullet-list-67",
-  },
-  {
-    path: "/variants",
-    name: "Variants",
-    component: LazyVariants,
-    layout: "/admin",
-    icon: "tim-icons icon-bullet-list-67",
-  },
+  // {
+  //   path: "/models",
+  //   name: "Models",
+  //   component: LazyModels,
+  //   layout: "/admin",
+  //   icon: "tim-icons icon-bullet-list-67",
+  // },
+  // {
+  //   path: "/variants",
+  //   name: "Variants",
+  //   component: LazyVariants,
+  //   layout: "/admin",
+  //   icon: "tim-icons icon-bullet-list-67",
+  // },
 
-  {
-    path: "/features",
-    name: "Features",
-    component: LazyFeatures,
-    layout: "/admin",
-    icon: "tim-icons icon-bullet-list-67",
-  },
-  {
-    path: "/agents",
-    name: "Agents",
-    component: LazyAgents,
-    layout: "/admin",
-    icon: "tim-icons icon-user-run",
-  },
+  // {
+  //   path: "/features",
+  //   name: "Features",
+  //   component: LazyFeatures,
+  //   layout: "/admin",
+  //   icon: "tim-icons icon-bullet-list-67",
+  // },
+  // {
+  //   path: "/agents",
+  //   name: "Agents",
+  //   component: LazyAgents,
+  //   layout: "/admin",
+  //   icon: "tim-icons icon-user-run",
+  // },
 ];
 
 export default routes;
